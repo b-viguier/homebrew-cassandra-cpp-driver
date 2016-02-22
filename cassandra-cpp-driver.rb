@@ -7,6 +7,7 @@ class CassandraCppDriver < Formula
 
   depends_on "cmake" => :build
   depends_on "libuv"
+  depends_on "openssl"
 
   def install
     mkdir "build" do
