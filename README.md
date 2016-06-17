@@ -1,14 +1,23 @@
 # homebrew-cassandra-cpp-driver
-Homebrew formulae to install `cassandra-cpp-driver`.
+[Homebrew](http://brew.sh) formulae to install `cassandra-cpp-driver`.
 This library may be useful if you intend to install cassandra extension via PECL.
 
 ## Usage
 Configure `brew` to use this repository.
-`brew tag b-viguier/cassandra-cpp-driver`
+```
+brew tap b-viguier/cassandra-cpp-driver
+```
+
+Then, install it.
+```
+brew install b-viguier/cassandra-cpp-driver/cassandra-cpp-driver
+```
 
 Be sure to install `pecl` with your php installation (see [homebrew-php doc](https://github.com/Homebrew/homebrew-php#pear-extensions)).
 
-`pecl install cassandra`
+```
+pecl install cassandra
+```
 
 ## Known Issues
 The install process will probably display following error message at the end:
