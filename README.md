@@ -13,28 +13,15 @@ Then, install it.
 brew install b-viguier/cassandra-cpp-driver/cassandra-cpp-driver
 ```
 
-Be sure to install `pecl` with your php installation (see [homebrew-php doc](https://github.com/Homebrew/homebrew-php#pear-extensions)).
+## Full install process of the php-cassandra extension
 
-```
-pecl install cassandra
-```
+* Install XCode and XCode Command Line Tools via `xcode-select --install`. If it fails (network timeout…), you will have to download directly from [Apple Website](https://developer.apple.com/develop/), in the *Download* section (need an AppleId).
+* Be sure to install `pecl` with your php installation `brew install php70 --with-pear` (see [homebrew-php doc](https://github.com/Homebrew/homebrew-php#pear-extensions)).
+* Do not forget special permissions for PEAR, check *Caveats* section in `brew info php70`.
+* Install this cpp-driver. You may require some additional dependencies that you can retrieve with `brew install libuv cmake gmp` [official documentation](see [http://datastax.github.io/cpp-driver/topics/building/#os-x)).
+* Install cassandra extension `pecl install cassandra`
+* Check installation with `php -i | grep cassandra`
 
-## Known Issues
-The install process will probably display following error message at the end:
-```
-Fatal error: Uncaught Error: Call to a member function getFilelist() on null in /usr/local/Cellar/php70/7.0.6/lib/php/PEAR/Command/Install.php:74
-```
-Sorry, I don't know how to fix it… but some lines above you should see a message similar to:
-```
-Build process completed successfully
-Installing '/usr/local/Cellar/php70/7.0.6/lib/php/extensions/no-debug-non-zts-20151012/cassandra.so'
-```
-If so, you can create an additional `ini`file `/usr/local/etc/php/7.0/conf.d/ext-cassandra.ini` with following content
-```ini
-[cassandra]
-extension="/usr/local/Cellar/php70/7.0.6/lib/php/extensions/no-debug-non-zts-20151012/cassandra.so"
-```
-To check your configuration, use `php -i | grep cassandra`.
 
 ## Thanks
 [@mpenick](https://github.com/mpenick) is the actual author of this code ([here his original PR](https://github.com/Homebrew/homebrew/pull/36511)).
