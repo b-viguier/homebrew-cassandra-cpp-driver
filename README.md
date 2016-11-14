@@ -18,7 +18,7 @@ brew install b-viguier/cassandra-cpp-driver/cassandra-cpp-driver
 * Install XCode and XCode Command Line Tools via `xcode-select --install`. If it fails (network timeout…), you will have to download directly from [Apple Website](https://developer.apple.com/develop/), in the *Download* section (need an AppleId).
 * Be sure to install `pecl` with your php installation `brew install php70 --with-pear` (see [homebrew-php doc](https://github.com/Homebrew/homebrew-php#pear-extensions)).
 * Do not forget special permissions for PEAR, check *Caveats* section in `brew info php70`.
-* Install this cpp-driver. You may require some additional dependencies that you can retrieve with `brew install libuv cmake gmp` [official documentation](see [http://datastax.github.io/cpp-driver/topics/building/#os-x)).
+* Install this cpp-driver. You may require some additional dependencies that you can retrieve with `brew install libuv cmake gmp` ([see official documentation](http://datastax.github.io/cpp-driver/topics/building/#os-x)).
 * Install cassandra extension `pecl install cassandra`
 * Check installation with `php -i | grep cassandra`
 
